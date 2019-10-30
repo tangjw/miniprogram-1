@@ -1,0 +1,14 @@
+<!--index.wxml-->
+<view></view>
+<view class="container">
+  <swiper class="swiper" circular="{{true}}" vertical="{{true}}" bindchange="onSwiperChange">
+    <block wx:for="{{testDatas}}" wx:key="{{index}}" >
+      <swiper-item>
+        <view class="swiper-item" style="background-color:{{item.bgc}};position:relative">
+        <video id="video{{index}}" class="video-item" src="{{item.swf}}" poster="{{item.img}}"  object-fit="fill"  binderror="videoErrorCallback" controls="{{true}}" show-fullscreen-btn="{{false}}" loop="{{true}}" enable-progress-gesture="{{false}}" play-btn-position="center"></video>
+        <view style="position:fixed;bottom:100rpx;right:40rpx;width: 120rpx;height: 400rpx;background: pink"></view>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
